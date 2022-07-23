@@ -7,12 +7,24 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "assert": "npm:assert",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
+    "buffer": "^6.0.3",
+    "crypto": "npm:crypto-browserify@^3.12.0",
+    "fs": "^0.0.1-security",
+    "http": "npm:stream-http",
+    "https": "npm:https-browserify",
+    "jsonwebtoken": "^8.5.1",
+    "os": "npm:os-browserify",
+    "path": "^0.12.7",
+    "process": "0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "steam": "^1.4.1",
+    "stream": "npm:stream-browserify",
     "styled-components": "^5.3.5",
     "styletron-react": "^6.1.0-beta.2",
     "web-vitals": "^2.1.4"
@@ -22,6 +34,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   },
   "eslintConfig": {
     "extends": [

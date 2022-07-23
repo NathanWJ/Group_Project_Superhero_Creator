@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require('cors'); 
 const app = express();
 const port = 8000;
+const jwt = require("jsonwebtoken");
 
 //Middleware that configures JSON properly to deal with form data 
 app.use(express.json(), express.urlencoded({ extended: true }));
