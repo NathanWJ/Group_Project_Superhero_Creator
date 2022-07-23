@@ -15,6 +15,7 @@ app.use(cors({
 require("./config/mongoose.config");
 
 require("./routes/hero.routes")(app);
+require("./routes/user.routes")(app);
 
 //Runs server on specified port
 app.listen(port, () => console.log(`SERVER.JS FILE WORKS - Running on: ${port}`));
