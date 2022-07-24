@@ -13,6 +13,34 @@
   }
 }
 
+.comparison-winner {
+  color: darkgreen;
+  background-color: lightgreen !important;
+}
+
+.comparison-loser {
+  color: darkred;
+  background-color: lightpink !important;
+}
+
+.comparison-tied {
+  color: black;
+  background-color: white !important;
+}
+
+.table-subhead {
+  font-weight: bold;
+  background-color: #282c34;
+  color: white;
+}
+
+.comicHeroName {
+  font-weight: bolder;
+  font-size: xx-large;
+  color: red;
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

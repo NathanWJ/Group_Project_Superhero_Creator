@@ -28,6 +28,7 @@ function App() {
           <Route path="/heroes/new" element={ <HeroCreate/> } />
           <Route path="/heroes/:id" element={ <HeroViewOne/> } />
           <Route path="/heroes/:id/edit" element={ <HeroEdit/> } />
+          <Route path="/heroes/compare" element={ <HeroCompare/> } />
         </Routes>
       </BrowserRouter>
     </div>
