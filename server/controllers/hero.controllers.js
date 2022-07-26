@@ -11,7 +11,7 @@ module.exports.createNewHero = (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(400).json({ err });
+            res.status(400).json(err);
         });
 };
 
@@ -24,7 +24,7 @@ module.exports.findAllHeroes = (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(400).json({ err });
+            res.status(400).json(err);
         });
 };
 
@@ -36,7 +36,7 @@ module.exports.findOneHero = (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(400).json({ err });
+            res.status(400).json(err);
         });
 };
 
@@ -52,7 +52,7 @@ module.exports.updateHero = (req, res) => {
     })
     .catch((err) => {
         console.log(err);
-        res.status(400).json({ err });
+        res.status(400).json(err);
     });
 };
 

@@ -16,7 +16,7 @@ const HeroSchema = new mongoose.Schema(
         },
         weakness: {
             type: String,
-            required: [true, "Your superhero's power(s) can't be blank."],
+            required: [true, "Your superhero's weakness(s) can't be blank."],
             minLength: [3, "Your superhero power must be at least 3 characters."]
         }
     },
