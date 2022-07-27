@@ -13,6 +13,8 @@ import HeroCompare from './components/HeroCompare';
 import HeroCreate from './components/HeroCreate';
 import HeroEdit from './components/HeroEdit';
 import HeroViewOne from './components/HeroViewOne';
+import UserRegistration from "./components/UserRegistration"
+import UserLogin from "./components/UserLogin"
 
 //TODO: Update "element" tags to match src>components files
 //TODO: Update "path" tags 
@@ -29,6 +31,8 @@ function App() {
           <Route path="/heroes/:id" element={ <HeroViewOne/> } />
           <Route path="/heroes/:id/edit" element={ <HeroEdit/> } />
           <Route path="/heroes/compare" element={ <HeroCompare/> } />
+          <Route path="/register" element={<UserRegistration/>} />
+          <Route path="/login" element={<UserLogin/>} />
         </Routes>
       </BrowserRouter>
     </div>
