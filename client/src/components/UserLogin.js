@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; 
+import {Link} from "react-router-dom";
 
 const UserLogin = (props) => { 
     const [email, setEmail] = useState("");
@@ -34,6 +35,7 @@ const UserLogin = (props) => {
 
     return ( 
         <div>
+            <Link to="/register">Don't have an account? Register.</Link>
             <h1>User Login Page</h1>
             <form onSubmit={loginHandler}>
                 <label>Email:</label>
