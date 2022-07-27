@@ -5,8 +5,8 @@ const HeroController = require('../controllers/hero.controllers');
 // - Specific path routes ("/products") go before a single document path ("products/:id")
 module.exports = app => {
     app.get('/api/heroes', HeroController.findAllHeroes); //GET request for Dashboard route
-    app.get('/api/heroes/:id', HeroController.findOneHero); //GET request for View route
     app.post('/api/heroes', HeroController.createNewHero); //POST request for Create route
+    app.get('/api/heroes/:id', HeroController.findOneHero); //GET request for View route
     app.put('/api/heroes/:id', HeroController.updateHero); //PUT request for Update route
     app.delete('/api/heroes/:id', HeroController.deleteHero); //DELETE request for Delete route
 }
