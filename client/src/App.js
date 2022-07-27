@@ -27,7 +27,7 @@ function App() {
           <Route path="/" element={ <HeroAll/> } />
           <Route path="/heroes/new" element={ <HeroCreate/> } />
           <Route path="/heroes/:id" element={ <HeroViewOne/> } />
-          <Route path="/heroes/:id/edit" element={ <HeroEdit/> } />
+          <Route path="/heroes/edit/:id" element={ <HeroEdit/> } />
           <Route path="/heroes/compare" element={ <HeroCompare/> } />
         </Routes>
       </BrowserRouter>

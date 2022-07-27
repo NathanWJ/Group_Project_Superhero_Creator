@@ -38,7 +38,7 @@ const HeroAll = (props) => {
                                 <td>{hero.name}</td>
                                 <td>{hero.powers}</td>
                                 <td>{hero.weakness}</td>
-                                <td><Link to={"/heroes/:id"}><button>Details</button></Link><Link to={'/heroes/:id/edit'}><button>Edit</button></Link><button onClick={() => deleteHero(hero._id)}>Delete</button></td>
+                                <td><Link to={"/heroes/:id"}><button>Details</button></Link><Link to={`/heroes/edit/${hero._id}`}><button>Edit</button></Link><button onClick={() => deleteHero(hero._id)}>Delete</button></td>
                             </tr>
                         ))
                     }
