@@ -33,6 +33,7 @@ const HeroCreate = (props) => {
     }
 
     
+    
     return ( 
         <div className='container'>
             <div className="header-container d-flex justify-content-around">
@@ -46,7 +47,7 @@ const HeroCreate = (props) => {
             <form onSubmit={handleSubmit} className='col-12 align-items-center'>
                 {errors.map((err, index) => (
                     <p key={index}>{err}</p>
-                ))}
+                ))} 
                 <div className='mt-3'>
                     <label>Superhero Name:</label>
                     <br/>
