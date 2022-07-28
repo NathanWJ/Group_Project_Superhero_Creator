@@ -7,11 +7,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .comparison-winner {
   color: darkgreen;
@@ -63,4 +58,143 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.container {
+  min-height: 100%;
+  position: relative;
+  align-items: center;
+  text-align: center;
+}
+
+body {
+  height: 100%;
+  background-image: url(../public/waldemar-brandt-eIOPDU3Fkwk-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+tbody{
+  background-color: rgba(62, 17, 14, 0.889);
+}
+
+thead{
+  background-color: rgba(43, 34, 33, 0.892);
+  color: rgb(255, 83, 83);
+  text-shadow: 3px 3px 3px rgb(163, 16, 5);
+  font-weight: 650;
+}
+
+table{
+  border: 2px rgb(245, 190, 190);
+  box-shadow: 5px 5px 5px 5px rgb(128, 23, 23);
+}
+
+td{
+  color: rgb(245, 175, 175);
+  text-shadow: 3px 3px 3px rgb(163, 16, 5);
+  font-weight: 650;
+}
+
+.header-container{
+  background-color: rgb(205, 104, 37);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.links{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  color: rgb(32, 21, 244);
+  text-shadow: 2px 2px rgb(167, 164, 233);
+}
+.btn{
+  text-decoration: none;
+  margin: 3px;
+}
+h1{
+  text-shadow: 5px 5px 5px  black;
+}
+.smallTitle{
+  margin-top: 20px;
+  margin-bottom: 25px;
+  text-shadow: 5px 5px 3px  #380303;
+  color: #e9e32a;
+  background-color: #905932ae;
+  font-size: xxx-large;
+  font-weight: 900;
+  border-radius: 50px;
+}
+
+
+label{
+  text-shadow: 5px 5px 3px  #380303;
+  color: #f0ecc1;
+  font-size: larger;
+  font-weight: 800;
+}
+
+form{
+  padding: 5px;
+  justify-content: space-around;
+  background-color: rgba(255, 89, 6, 0.73);
+  border-radius: 50px;
+  width: 60%;
+  display: inline-block;
+}
+
+input{
+  width: 80%;
+  padding: 12px 20px;
+  border-color: rgb(0, 0, 0);
+  border-radius: 50px;
+  border: 2px solid;
+  background-color: rgba(128, 80, 80, 0.62);
+  
+}
+
+
+textarea{
+  width: 80%;
+  margin: 8px 0;
+  padding: 12px 20px;
+  border-color: rgb(0, 0, 0);
+  border-radius: 50px;
+  background-color: rgba(128, 80, 80, 0.62);
+  border: 2px solid;
+}
+.link{
+  font-weight: 600;
+  color: rgb(237, 226, 198);
+  text-shadow: 2px 2px 2px  rgb(0, 0, 0);
+}
+p{
+  text-shadow: 2px 2px 2px  #dfc2c2;
+  color: #060606;
+  font-size: larger;
+  font-weight: 800;
+}
+h2{
+  text-shadow: 5px 5px 3px  #380303;
+  color: #f9dd80;
+  font-size: larger;
+  font-weight: 800;
+}
+.info{
+  padding: 5px;
+  justify-content: space-around;
+  background-color: rgba(255, 89, 6, 0.73);
+  border-radius: 50px;
+  width: 60%;
+  
+}
+.info{
+  display: inline-block;
+}
+.header-nav{
+  width: 100%;
 }

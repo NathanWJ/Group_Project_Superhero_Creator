@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; 
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, BrowserRouter, Routes, Route,Link } from 'react-router-dom'
+import "../App.css";
 
 const HeroEdit = (props) => { 
     const [name, setName] = useState('')
@@ -9,7 +10,7 @@ const HeroEdit = (props) => {
     const [errors, setErrors] = useState([])
     const {id} = useParams()
     const navigate = useNavigate()
-  
+
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/heroes/${id}`)
@@ -49,26 +50,39 @@ const HeroEdit = (props) => {
 
     return ( 
         <div>
-         <form onSubmit={handleUpdate}>
-            {errors.map((err, index) => (
-                <p key={index}>{err}</p>
-            ))}
-            <div>
-                <label>Superhero Name:</label>
-                <input type='text' onChange={e => setName(e.target.value)} value={name}></input>
+            <div className="header-container d-flex justify-content-around">
+                <h1 className="header-hl text-light">Superhero Creator</h1>
+                    <Link to={`/`} className='links'> Home </Link>
+                    <Link to={`/heroes/new`} className='links'> Create Hero </Link>
+                    <Link to={`/heroes/compare`} className='links'> Compare Superheroes </Link>
+                    <Link to={`/login`} className='links'> Logout </Link>
             </div>
+            <h1 className='smallTitle'>Edit Hero</h1>
             <div>
-                <label>Powers:</label>
-                <textarea onChange={e => setPower(e.target.value)} value={powers}></textarea>
+                <form onSubmit={handleUpdate}>
+                    {errors.map((err, index) => (
+                        <p key={index}>{err}</p>
+                    ))}
+                    <div>
+                        <label>Superhero Name:</label>
+                        <br/>
+                        <input type='text' onChange={e => setName(e.target.value)} value={name}></input>
+                    </div>
+                    <div>
+                        <label>Powers:</label>
+                        <br/>
+                        <textarea onChange={e => setPower(e.target.value)} value={powers}></textarea>
+                    </div>
+                    <div>
+                        <label>Weaknesses:</label>
+                        <br/>
+                        <textarea onChange={e => setWeakness(e.target.value)} value={weakness}></textarea>
+                    </div>
+                    <button className='btn btn-dark text-light'>Update Superhero</button>
+                    <button className='btn btn-dark text-light'>Cancel</button>
+                </form>
             </div>
-            <div>
-                <label>Weaknesses:</label>
-                <textarea onChange={e => setWeakness(e.target.value)} value={weakness}></textarea>
-            </div>
-            <button>Create Superhero</button>
-            <button>Cancel</button>
-        </form>
-    </div>
+        </div>
     )
 }
 

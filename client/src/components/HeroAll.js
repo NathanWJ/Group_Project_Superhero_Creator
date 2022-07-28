@@ -1,49 +1,93 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; 
-import {Link} from 'react-router-dom'
-const HeroAll = (props) => { 
-    const [heroes, setHeroes] = useState([])
+import{Link, BrowserRouter, Routes, Route} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css';
+import "../App.css";
+
+
+const HeroAll = (props) => {
+    const{loggedIn} = props;
+
+    const [allHeroes, setAllHeroes] = useState([]);
+
+    const deleteHero = (idBelow) => {
+        axios
+        .delete(`http://localhost:8000/api/heroes/${idBelow}`)
+        .then((res) =>{
+            console.log(res.body);
+
+            const newHeroList = allHeroes.filter((hero,index) => hero._id !== idBelow)
+            setAllHeroes(newHeroList)
+        })
+        .catch((err)=> console.log(err))
+    }
+
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/heroes')
-        .then(res => setHeroes(res.data))
-        .catch(err => console.log(err))
-    }, [])
+        axios
+            .get("http://localhost:8000/api/heroes")
+            .then((res) => {
+            console.log(res.data);
+            setAllHeroes(res.data);
+            })
+            .catch((err) => {
+            console.log(err.res);
+            });
+        }, []);
 
-
-    const deleteHero = id => {
-        axios.delete(`http://localhost:8000/api/heroes/${id}`)
-        .then(deletedHero => {
-            console.log(deletedHero)
-            setHeroes(heroes.filter(filterHeroes => filterHeroes._id !== id ))
-        }, [])
-        .catch(err => console.log(err))
-    }
     return ( 
-        <div>
-            <table className='table table-danger'>
-                <thead>
-                    <tr>
-                    {/* <th scope='col'>Creator Name</th> */}
-                    <th scope='col'>Superhero</th>
-                    <th scope='col'>Powers</th>
-                    <th scope='col'>Weakness</th>
-                    <th scope='col'>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        heroes.map((hero, index) => (
-                            <tr key={index}>
+
+
+        
+        <div className='container'> 
+        <div className='header-nav\'>
+            <div className="header-container d-flex justify-content-around">
+                <h1 className="header-hl text-light">Superhero Creator</h1>
+                    <Link to={`/`} className='links'> Home </Link>
+                    <Link to={`/heroes/new`} className='links'> Create Hero </Link>
+                    <Link to={`/heroes/compare`} className='links'> Compare Superheroes </Link>
+                    <Link to={`/login`} className='links'> Logout </Link>
+            </div>
+        </div>
+            <div>
+                <h1 className='smallTitle'> All Created Heroes </h1>
+                <table className='table-bordered col-12 align-items-center'>
+                    <thead>
+                        <tr>
+                            <th>Superhero</th>
+                            <th>Powers</th>
+                            <th>Weakness</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        {allHeroes.map((hero,index) =>{
+                            return(
+                                <tr key={hero._id}> 
                                 <td>{hero.name}</td>
                                 <td>{hero.powers}</td>
                                 <td>{hero.weakness}</td>
-                                <td><Link to={`/heroes/${hero._id}`}><button>Details</button></Link><Link to={`/heroes/edit/${hero._id}`}><button>Edit</button></Link><button onClick={() => deleteHero(hero._id)}>Delete</button></td>
-                            </tr>
-                        ))
-                    }
-                </tbody>
-            </table>
+                                <td className='justify-content-evenly d-flex p-2 '>
+                                    <button className='btn btn-warning'> 
+                                        <Link className='text-decoration-none text-dark' to={`/heroes/${hero._id}`}> Details </Link>
+                                    </button> 
+                                    
+                                {/* DO IF STATEMENT */}
+
+                                    <button className='btn btn-warning'>
+                                        <Link className='text-decoration-none text-dark' to={`/heroes/edit/${hero._id}`}> Edit </Link>
+                                    </button>
+                                    <button onClick={()=> deleteHero(hero._id) } className='btn btn-warning'> 
+                                        Delete!
+                                    </button>
+
+                                </td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }
