@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import "./App.css";
-import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 // Above allows for routing and individual pages instead of everything on one page: 
 // - Add <BrowserRouter><BrowserRouter/> tags at the highest level wrapper of the return
 // - Add <Routes><Routes/> tags around the individual pages
@@ -19,22 +20,30 @@ import UserLogin from "./components/UserLogin"
 //TODO: Update "element" tags to match src>components files
 //TODO: Update "path" tags 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const handelLogin = (props) => {
+    console.log(loggedIn);
+    setLoggedIn(!loggedIn)
+  }
+  console.log(loggedIn);
+
   return (
     <div className="App">
-      <div className="header-container">
-        <h1 className="header-hl">Header For All Pages Goes Here</h1>
-      </div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={ <HeroAll/> } />
-          <Route path="/heroes/new" element={ <HeroCreate/> } />
-          <Route path="/heroes/:id" element={ <HeroViewOne/> } />
-          <Route path="/heroes/edit/:id" element={ <HeroEdit/> } />
-          <Route path="/heroes/compare" element={ <HeroCompare/> } />
-          <Route path="/register" element={<UserRegistration/>} />
-          <Route path="/login" element={<UserLogin/>} />
-        </Routes>
-      </BrowserRouter>
+      <>
+        <BrowserRouter>
+
+
+          <Routes>
+            <Route path="/" element={<HeroAll />}  loggedIn={loggedIn} />
+            <Route path="/heroes/new" element={<HeroCreate />} />
+            <Route path="/heroes/:id" element={<HeroViewOne />} />
+            <Route path="/heroes/edit/:id" element={<HeroEdit />} />
+            <Route path="/heroes/compare" element={<HeroCompare />} />
+            <Route path="/register" element={<UserRegistration />} />
+            <Route path="/login" element={<UserLogin handelLogin={handelLogin} />} setLoggedIn={setLoggedIn}  />
+          </Routes>
+        </BrowserRouter>
+      </>
     </div>
   );
 }

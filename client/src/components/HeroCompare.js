@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'; 
+import { BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import axios from 'axios';
+import "../App.css";
 
 const HeroCompare = () => { 
     const [comicHero, setComicHero] = useState([]);
@@ -49,8 +51,15 @@ const HeroCompare = () => {
 
     return ( 
         <div className="container">
+            <div className="header-container d-flex justify-content-around">
+                <h1 className="header-hl text-light">Superhero Creator</h1>
+                    <Link to={`/`} className='links'> Home </Link>
+                    <Link to={`/heroes/new`} className='links'> Create Hero </Link>
+                    <Link to={`/heroes/compare`} className='links'> Compare Superheroes </Link>
+                    <Link to={`/login`} className='links'> Logout </Link>
+            </div>
             <div className="header">
-                <h1>Superhero Matchup</h1>
+                <h1 className='smallTitle' >Superhero Matchup</h1>
             </div>
             <div className="body">
                 <table className="table table-sm">
