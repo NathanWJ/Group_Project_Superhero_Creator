@@ -63,7 +63,9 @@ const HeroCreate = (props) => {
                     <textarea onChange={e => setWeakness(e.target.value)}></textarea>
                 </div>
                 <button className='m-3 btn btn-dark text-warning'>Create Superhero</button>
-                <button className='m-3 btn btn-dark text-warning'>Cancel</button>
+                <button className='m-3 btn btn-dark text-warning'>
+                    <a className='text-warning' href='/'>Cancel</a>
+                </button>
             </form>
         </div>
     )

@@ -198,3 +198,6 @@ h2{
 .header-nav{
   width: 100%;
 }
+.text-warning{
+  text-decoration: none;
+}
