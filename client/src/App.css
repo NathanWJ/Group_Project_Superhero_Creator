@@ -70,7 +70,7 @@
 
 body {
   height: 100%;
-  background-image: url(../public/waldemar-brandt-eIOPDU3Fkwk-unsplash.jpg);
+  background-image: url('https://images.squarespace-cdn.com/content/v1/54992035e4b0c49940a59e49/1597521642642-B0V8DCDSJBHLQSTC688R/waldemar-brandt-eIOPDU3Fkwk-unsplash.jpg?format=2500w');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -197,4 +197,7 @@ h2{
 }
 .header-nav{
   width: 100%;
+}
+.text-warning{
+  text-decoration: none;
 }

@@ -33,6 +33,7 @@ const HeroCreate = (props) => {
     }
 
     
+    
     return ( 
         <div className='container'>
             <div className="header-container d-flex justify-content-around">
@@ -46,7 +47,7 @@ const HeroCreate = (props) => {
             <form onSubmit={handleSubmit} className='col-12 align-items-center'>
                 {errors.map((err, index) => (
                     <p key={index}>{err}</p>
-                ))}
+                ))} 
                 <div className='mt-3'>
                     <label>Superhero Name:</label>
                     <br/>
@@ -63,10 +64,13 @@ const HeroCreate = (props) => {
                     <textarea onChange={e => setWeakness(e.target.value)}></textarea>
                 </div>
                 <button className='m-3 btn btn-dark text-warning'>Create Superhero</button>
-                <button className='m-3 btn btn-dark text-warning'>Cancel</button>
+                <button className='m-3 btn btn-dark text-warning'>
+                    <a className='text-warning' href='/'>Cancel</a>
+                </button>
             </form>
         </div>
     )
 }
+
 
 export default HeroCreate;
