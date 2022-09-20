@@ -8,8 +8,10 @@ The backend is built with Express, Node.js, and MongoDB. The frontend design has
 * CRUD functionalities and form validation
 
 ## Author
-Christian Ramirez:
-https://github.com/cramirez88
+- Christian Ramirez: [https://github.com/cramirez88](https://github.com/cramirez88)
+- Gabriela Vazquez: [https://github.com/gabs-v](https://github.com/gabs-v)
+- Anthony Gibson: [https://github.com/anthonycg](https://github.com/anthonycg)
+- Nathan WJ: [https://github.com/NathanWJ](https://github.com/NathanWJ)
 
 ## Demo
 ### Homepage
